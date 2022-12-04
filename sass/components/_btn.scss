@@ -1,0 +1,46 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    display: inline-block;
+    position: relative;
+    font-size: 1.8rem;
+    color: $color-accent;
+    transition: all 0.2s;
+
+    //Change for the <button> element
+    border: none;
+    cursor: pointer;
+
+    @include respond('phone') {
+      font-size: 1.4rem;
+      padding: 1rem 2rem;
+    }
+  }
+}
+
+.btn-primary {
+  background-color: $color-accent;
+  color: $color-secondary !important;
+  padding: 1rem 5rem !important;
+  border-radius: 3rem;
+  font-size: 2.5rem !important;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.btn-outline {
+  border: 1.5px solid $color-accent;
+  background-color: transparent;
+  border-radius: 5rem;
+
+  &:hover {
+    color: $color-secondary;
+    background-color: $color-accent;
+  }
+}

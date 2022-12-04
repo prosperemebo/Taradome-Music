@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap');
+
+body {
+  font-family: $primary-font;
+  font-weight: 400;
+  /* font-size: 16px;*/
+  line-height: 1.7;
+  color: $color-primary;
+}
+
+.heading-primary {
+  font-family: $secondary-font;
+  font-weight: 600;
+  font-size: 12rem;
+  line-height: 1.4em;
+  font-size: clamp(6rem, 12vw + 1rem, 12rem);
+}
+
+.tagline-heading {
+  font-family: $primary-font;
+  font-weight: 400;
+  font-size: 4rem;
+  text-transform: uppercase;
+
+  @include respond(phone) {
+    font-size: 3rem;
+  }
+}
+
+.paragraph {
+  font-family: $primary-font;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 170%;
+}
+
+a {
+  text-decoration: none;
+}

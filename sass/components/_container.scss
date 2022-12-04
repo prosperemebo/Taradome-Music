@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+  min-width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 3vw;
+
+  @include media('>=1800px') {
+    width: 1800px;
+    min-width: 1800px;
+    padding: 0;
+  }
+
+  .row {
+    display: flex;
+    height: 100%;
+    padding: 0 32px;
+    @include media('<=phone') {
+      padding: 0 16px;
+    }
+  }
+
+  .v-center {
+    align-items: center;
+  }
+
+  .space-between {
+    justify-content: space-between;
+  }
+}
