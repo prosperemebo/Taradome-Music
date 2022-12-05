@@ -27,6 +27,18 @@ body {
   }
 }
 
+.heading-secondary {
+  font-family: $secondary-font;
+  font-weight: 500;
+  font-size: 6rem;
+  text-transform: uppercase;
+}
+
+.block-heading {
+  border-bottom: 1.5px solid $color-primary;
+  margin-bottom: 1rem;
+}
+
 .paragraph {
   font-family: $primary-font;
   font-weight: 400;
