@@ -1,22 +1,231 @@
 @import '/sass/abstracts/variables';
+@import '/sass/abstracts/mixins';
 
 .navigation {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  @include bodySpacing;
+  background-color: $color-background;
+
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1.5px solid $color-primary;
+
+    .logo {
+      position: relative;
+      width: 25rem;
+      height: 3rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: left;
+      }
+    }
+
+    button {
+      position: relative;
+      z-index: 10000;
+    }
+  }
+
+  .main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100vh;
+    width: 100vw;
+    transform: translateX(100%);
+    transition: 0.5s ease;
+
+    .backdrop {
+      position: absolute;
+      right: 0;
+      background-color: rgba($color-secondary, 0.6);
+      height: 100%;
+      width: 100%;
+      transform-origin: right;
+    }
+
+    .content {
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+      background-color: $color-background;
+      width: max(50%, 60rem);
+      height: 100%;
+      border-top-left-radius: 20%;
+      border-bottom-left-radius: 20%;
+
+      @include respond(phone) {
+        width: 100%;
+        border-radius: 0;
+      }
+
+      .mainList {
+        position: absolute;
+        top: 45%;
+        left: 0;
+        transform: translateY(-50%);
+        padding-left: 10rem;
+
+        @include respond(phone) {
+          padding-left: 2rem;
+        }
+
+        li {
+          list-style: none;
+
+          &:not(:last-child) {
+            margin-bottom: 2rem;
+          }
+
+          a {
+            font-family: $secondary-font;
+            font-weight: 500;
+            font-size: 6rem;
+            text-transform: uppercase;
+            color: $color-primary;
+            position: relative;
+            padding: 2rem;
+            overflow: hidden;
+
+            &::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 100%;
+              width: 100%;
+              transform: scaleX(0);
+              transform-origin: left;
+              background-color: $color-accent;
+              z-index: -1;
+              display: block;
+              transition: transform 0.3s ease;
+            }
+
+            &:hover {
+              color: $color-secondary;
+
+              &::before {
+                transform: scaleX(1);
+              }
+            }
+          }
+        }
+      }
+
+      .subList {
+        position: absolute;
+        bottom: 0%;
+        right: 0;
+        @include bodySpacing;
+        padding-left: 0;
+        margin-bottom: 3rem;
+        text-align: right;
+
+        li {
+          list-style: none;
+          margin-bottom: 0.7rem;
+
+          a {
+            font-weight: 400;
+            font-size: 2rem;
+            color: $color-primary;
+          }
+        }
+      }
+    }
+
+    &.open {
+      z-index: 1000;
+      transform: translateX(0%) !important;
+    }
+  }
+}
+
+.footer {
+  padding: 3rem 0;
+  border-top: 1.5px solid $color-primary;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 0;
-  border-bottom: 1.5px solid $color-primary;
+
+  @include respond(tab-land) {
+    flex-direction: column;
+  }
 
   .logo {
-    position: relative;
-    width: 25rem;
-    height: 3rem;
+    figure {
+      height: 4rem;
+      margin-bottom: 0.5rem;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: left;
+      img {
+        height: 100%;
+        object-fit: contain;
+        object-position: left;
+        width: 100%;
+      }
+    }
+
+    .info {
+      span {
+        font-size: 1.6rem;
+      }
+    }
+
+    @include respond(tab-land) {
+      margin-bottom: 5rem;
+
+      figure img {
+        object-position: center;
+      }
+
+      .info {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include respond(tab-land) {
+      justify-content: center;
+      align-items: center;
+
+      li {
+        margin-right: 0rem !important;
+
+        padding: 0 1rem;
+      }
+    }
+
+    li {
+      list-style: none;
+
+      a {
+        font-size: 1.8rem !important;
+      }
+
+      &:not(:last-child) {
+        margin-right: 4rem;
+      }
     }
   }
 }

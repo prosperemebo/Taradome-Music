@@ -1,6 +1,7 @@
-import classes from './Home.module.scss';
+import Link from 'next/link';
+import { SimpleList, SmallProfileCard } from '../../Artists';
 
-import { SmallProfileCard } from '../../Artists';
+import classes from './Home.module.scss';
 
 import artist1 from '../../../assets/artists/artist-1.jpg';
 import artist2 from '../../../assets/artists/artist-2.jpg';
@@ -35,13 +36,7 @@ const Artists = () => {
   return (
     <section className={classes.artists}>
       <h2 className='heading-secondary block-heading'>Artists</h2>
-      <ul className={classes.main}>
-        {artists.map((a, i) => (
-          <li key={i}>
-            <SmallProfileCard image={a.image} label={a.label} />
-          </li>
-        ))}
-      </ul>
+      <SimpleList />
     </section>
   );
 };

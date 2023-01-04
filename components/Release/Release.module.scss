@@ -1,0 +1,23 @@
+.release {
+  display: flex;
+  flex-direction: column;
+
+  figure {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+
+    img {
+      position: static !important;
+      height: 100%;
+      width: 100%;
+      object-position: center;
+      object-fit: cover;
+    }
+  }
+
+  .content {
+    flex: 1;
+  }
+}

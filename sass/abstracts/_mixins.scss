@@ -17,6 +17,14 @@
   box-shadow: 0px 25px 50px rgba($color-white, 0.05);
 }
 
+@mixin bodySpacing {
+  padding: 0 5vw;
+
+  @include respond(phone) {
+    padding: 0 3vw;
+  }
+}
+
 // MEDIA QUERY MANAGER
 /*
   0 - 400px:      Small Phone

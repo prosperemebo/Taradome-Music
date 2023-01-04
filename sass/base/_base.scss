@@ -30,11 +30,8 @@ html {
 body {
   box-sizing: border-box;
   background-color: $color-background;
-  padding: 0 5vw;
 
-  @include respond(phone) {
-    padding: 0 3vw;
-  }
+  @include bodySpacing;
 }
 
 ::selection {

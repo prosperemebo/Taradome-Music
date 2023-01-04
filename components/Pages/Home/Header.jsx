@@ -12,14 +12,12 @@ const Header = () => {
     <header className={classes.header}>
       <div className={classes.textbox}>
         <h1 className='heading-primary'>TARADOME MUSIC</h1>
-        <p className='paragraph'>
-          Our tagline reads, a paragone in Music. Aside from continually putting
-          out great music, we aspire to be that Model of Excellence where the
-          Business behind the Show is professional, transparent and fair.
-        </p>
+        <p className='paragraph'>A paragone in Music.</p>
       </div>
 
       <Swiper
+        autoplay={true}
+        loop={true}
         navigation={true}
         modules={[Navigation]}
         className={classes.swiper}

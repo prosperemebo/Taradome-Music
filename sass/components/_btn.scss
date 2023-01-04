@@ -10,10 +10,33 @@
     font-size: 1.8rem;
     color: $color-accent;
     transition: all 0.2s;
+    overflow: hidden;
 
     //Change for the <button> element
     border: none;
     cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      transform: scaleX(0);
+      transform-origin: left;
+      border-radius: 3rem;
+      background-color: $color-accent;
+      z-index: -1;
+      display: block;
+      transition: transform 0.2s ease;
+    }
+
+    &:hover {
+      &::before {
+        transform: scaleX(1);
+      }
+    }
 
     @include respond('phone') {
       font-size: 1.4rem;
@@ -35,12 +58,11 @@
 }
 
 .btn-outline {
-  border: 1.5px solid $color-accent;
+  border: 1.5px solid $color-accent !important;
   background-color: transparent;
   border-radius: 5rem;
 
   &:hover {
     color: $color-secondary;
-    background-color: $color-accent;
   }
 }
