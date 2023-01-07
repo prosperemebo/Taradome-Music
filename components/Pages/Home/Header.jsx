@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <header className={classes.header}>
       <div className={classes.textbox}>
-        <h1 className='heading-primary'>TARADOME MUSIC</h1>
+        <h1 className='heading-primary'>TARADOMEMUSIK</h1>
         <p className='paragraph'>A paragone in Music.</p>
       </div>
 
