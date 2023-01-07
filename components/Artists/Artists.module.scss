@@ -56,6 +56,96 @@
       }
     }
   }
+
+  &.large {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+    border-radius: 3rem;
+
+    @include respond(tab-port) {
+      padding: 0.5rem;
+      border-radius: 2rem;
+    }
+
+    figure {
+      height: 40rem;
+      width: 100%;
+      overflow: hidden;
+      border-radius: inherit;
+
+      @include respond(phone) {
+        height: 25rem;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .info {
+      padding: 0rem 3rem;
+      border-radius: 3rem;
+      background-color: $color-accent;
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border: 1.5px solid $color-accent;
+      transition: background-color 0.1s ease;
+
+      &:hover {
+        background-color: transparent;
+
+        span {
+          color: $color-accent;
+        }
+
+        svg path {
+          fill: $color-accent;
+        }
+      }
+
+      span {
+        font-size: 4rem;
+        text-transform: uppercase;
+        font-family: $primary-font;
+        color: $color-secondary;
+        font-weight: 400;
+
+        @include respond(tab-port) {
+          font-size: 2.5rem;
+        }
+      }
+
+      svg {
+        margin-left: 1rem;
+        align-self: center;
+        transform: translateY(2px);
+
+        @include respond(tab-port) {
+          height: 2.8rem;
+          width: auto;
+        }
+      }
+
+      a {
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: inline-block;
+          height: 100%;
+          width: 100%;
+          z-index: 10;
+        }
+      }
+    }
+  }
 }
 
 .artists_list {
@@ -66,6 +156,27 @@
 
   @include respond(tab-port) {
     gap: 1.5rem;
+  }
+
+  li {
+    list-style: none;
+    flex: 1;
+  }
+}
+
+.artists_list_large {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(30rem, 1fr));
+  gap: 2rem;
+  margin-bottom: 15rem;
+
+  @include respond(tab-port) {
+    grid-template-columns: repeat(2, minmax(20rem, 1fr));
+    gap: 1.5rem;
+  }
+
+  @include respond(sm-phone) {
+    grid-template-columns: repeat(1, minmax(20rem, 1fr));
   }
 
   li {

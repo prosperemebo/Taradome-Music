@@ -1,0 +1,29 @@
+@import '/sass/abstracts/mixins';
+@import '/sass/abstracts/variables';
+
+.header {
+  margin-top: 17rem;
+  margin-bottom: 5rem;
+
+  @include respond(tab-port) {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+  }
+
+  .textbox {
+    margin-bottom: 5rem;
+  }
+}
+
+.submissions {
+  margin-bottom: 10rem;
+  width: calc(100% - 30vh);
+
+  @include respond(tab-port) {
+    width: min(100%, 60rem);
+  }
+
+  p {
+    margin-bottom: 3rem;
+  }
+}

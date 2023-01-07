@@ -39,7 +39,7 @@ const Nav = () => {
               <Link href='/about'>About</Link>
             </li>
             <li>
-              <Link href='/'>Artists</Link>
+              <Link href='/artists'>Artists</Link>
             </li>
             <li>
               <Link href='/'>Submissions</Link>
